@@ -8,7 +8,7 @@
     "watch": "webpack --config webpack.common.js --watch",
     "electron": "electron .",
     "start": "semantic-ui-css-patch && concurrently --kill-others \"webpack --config webpack.common.js --watch\" \"electron .\"",
-    "package": "electron-packager . --overwrite --platform=win32 --arch=x64 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds"
+    "package:windows": "electron-packager . --overwrite --platform=win32 --arch=x64 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds"
   },
   "keywords": [],
   "author": {
@@ -19,6 +19,7 @@
   "dependencies": {
     "@semantic-ui-react/css-patch": "^1.1.2",
     "electron": "^21.0.1",
+    "electron-react-titlebar": "^1.2.1",
     "file-loader": "^6.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,6 +32,7 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@svgr/webpack": "^6.3.1",
     "babel-loader": "^8.1.0",
     "concurrently": "^7.4.0",
     "css-loader": "^6.7.1",

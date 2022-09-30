@@ -5,9 +5,10 @@ const isDev = !app.isPackaged;
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    backgroundColor: "white",
+    width: 940,
+    height: 680,
+    frame: false,
+    title: "Ensure Replay",
     webPreferences: {
       nodeIntegration: false,
       worldSafeExecuteJavaScript: true,
@@ -16,7 +17,15 @@ function createWindow() {
     },
   });
 
+  global.share = { ipcMain, win };
+
+  loadListeners(win);
+
   win.loadFile("index.html");
+}
+
+function loadListeners(win) {
+  require("./src/listeners/TitleListener.jsx");
 }
 
 if (isDev) {

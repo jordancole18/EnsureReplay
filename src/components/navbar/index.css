@@ -1,0 +1,17 @@
+.item:hover {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.item {
+  transition: 0.15s all ease;
+  -webkit-app-region: no-drag;
+}
+
+.navbar {
+  -webkit-app-region: drag;
+}
+
+body {
+  -webkit-user-select: none;
+}

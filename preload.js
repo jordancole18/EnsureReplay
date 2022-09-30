@@ -1,16 +1,16 @@
+const { ipcRenderer, contextBridge } = require("electron");
 
-const { ipcRenderer, contextBridge } = require('electron');
-
-contextBridge.exposeInMainWorld('electron', {
+contextBridge.exposeInMainWorld("electron", {
+  titleApi: {
+    closeApp: () => ipcRenderer.send("closeApp"),
+    maximizeApp: () => ipcRenderer.send("maximizeApp"),
+    minimizeApp: () => ipcRenderer.send("minimizeApp"),
+  },
   notificationApi: {
     sendNotification(message) {
-      ipcRenderer.send('notify', message);
-    }
+      ipcRenderer.send("notify", message);
+    },
   },
-  batteryApi: {
-
-  },
-  filesApi: {
-
-  }
-})
+  batteryApi: {},
+  filesApi: {},
+});
