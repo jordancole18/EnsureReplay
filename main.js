@@ -17,15 +17,15 @@ function createWindow() {
     },
   });
 
+  // set background color to the primary color
+  win.setBackgroundColor("#131E2A");
+
+  // global data for ipc listeners
   global.share = { ipcMain, win };
 
   loadListeners(win);
 
   win.loadFile("index.html");
-}
-
-function loadListeners(win) {
-  require("./src/listeners/TitleListener.jsx");
 }
 
 if (isDev) {
@@ -34,8 +34,8 @@ if (isDev) {
   });
 }
 
-ipcMain.on("notify", (_, message) => {
-  new Notification({ title: "Notifiation", body: message }).show();
-});
+function loadListeners(win) {
+  require("./src/listeners/TitleListener.jsx");
+}
 
 app.whenReady().then(createWindow);

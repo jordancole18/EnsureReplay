@@ -15,6 +15,7 @@ export const Navbar = () => {
         backgroundColor: colors.secondary,
         width: "100%",
         height: "48px",
+        display: "flex",
       }}
     >
       <img
@@ -22,12 +23,13 @@ export const Navbar = () => {
         src={Bars}
         style={{ width: 24, height: 24, margin: "12px" }}
       />
+      <h1 style={{ color: colors.primary, margin: "auto" }}>Ensure Replay</h1>
       <img
         className="item"
-        src={Close}
+        src={Minimize}
         style={{ width: 24, height: 24, margin: "12px", float: "right" }}
         onClick={() => {
-          electron.titleApi.closeApp();
+          electron.titleApi.minimizeApp();
         }}
       />
       <img
@@ -40,10 +42,10 @@ export const Navbar = () => {
       />
       <img
         className="item"
-        src={Minimize}
+        src={Close}
         style={{ width: 24, height: 24, margin: "12px", float: "right" }}
         onClick={() => {
-          electron.titleApi.minimizeApp();
+          electron.titleApi.closeApp();
         }}
       />
     </div>
