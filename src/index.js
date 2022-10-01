@@ -4,4 +4,11 @@ import { createRoot } from "react-dom/client";
 import "semantic-ui-css/semantic.min.css";
 import { Router } from "./screens/router";
 
-createRoot(document.getElementById("root")).render(<Router />);
+import "./index.css";
+import { NavbarProvider } from "./providers/NavbarProvider";
+
+createRoot(document.getElementById("root")).render(
+  <NavbarProvider>
+    <Router />
+  </NavbarProvider>
+);

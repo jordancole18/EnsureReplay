@@ -1,0 +1,20 @@
+.clip-card {
+  position: relative;
+  width: 300px;
+  height: 128px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.clip-padding {
+  margin-right: 10px;
+}
+
+.icon:hover {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.icon {
+  transition: 0.15s all ease;
+}

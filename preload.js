@@ -5,6 +5,7 @@ contextBridge.exposeInMainWorld("electron", {
     closeApp: () => ipcRenderer.send("closeApp"),
     maximizeApp: () => ipcRenderer.send("maximizeApp"),
     minimizeApp: () => ipcRenderer.send("minimizeApp"),
+    test: () => ipcRenderer.invoke("test-data"),
   },
   notificationApi: {
     sendNotification(message) {

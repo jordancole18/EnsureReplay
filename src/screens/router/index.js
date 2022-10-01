@@ -1,13 +1,11 @@
 import React from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
-import { Main } from "../main/index";
+import { HashRouter } from "react-router-dom";
+import { AnimatedRoute } from "../../components/animated-route";
 
 export const Router = () => {
   return (
     <HashRouter>
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
+      <AnimatedRoute />
     </HashRouter>
   );
 };

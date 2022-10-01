@@ -13,3 +13,8 @@ global.share.ipcMain.on("maximizeApp", () => {
     global.share.win.maximize();
   }
 });
+
+global.share.ipcMain.handle("test-data", () => {
+  const testResult = "tsjkdfnajksdnf";
+  return testResult;
+});
